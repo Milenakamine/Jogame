@@ -76,6 +76,56 @@ namespace Jogame.Repositories
 
 
 
+        public List<Jogo> BuscarPorNome(string nome)
+        {
+            try
+            {
+                return _ctx.Jogos.Where(p => p.Nome.Contains(nome)).ToList();
+
+            }
+            catch (Exception ex)
+            {
+
+                throw new Exception(ex.Message);
+            }
+        }
+
+
+
+
+        public void Editar(Jogo jogo)
+        {
+            try
+            {
+                //busca jogo pelo id
+                Jogo jogoTemp = BuscarPorId(jogo.Id);
+                //verifica se o jogo existe no sistema, caso nao exista gera um exception
+                if (jogoTemp == null)
+                    throw new Exception("Jogo não encontrado no sistema. Verifique se foi digitado da maneira correta e tente novamente.");
+
+                //caso exista altera suas propriedades
+                jogoTemp.Nome = jogo.Nome;
+                jogoTemp.Descricao = jogo.Descricao;
+                jogoTemp.OrderDate = jogo.OrderDate;
+
+
+
+                //altera jogo no seu contexto
+                _ctx.Jogos.Update(jogoTemp);
+                //salva suas alteraçoes
+                _ctx.SaveChanges();
+
+            }
+            catch (Exception ex)
+            {
+
+                throw new Exception(ex.Message);
+            }
+        }
+
+
+
+
         public List<Jogo> Listar()
         {
             try
@@ -86,6 +136,34 @@ namespace Jogame.Repositories
             {
                 throw new Exception(ex.Message);
             }
+        }
+
+
+
+
+
+        public void Remover(Guid id)
+        {
+            try
+            {
+                //busca jogo pelo id
+                Jogo jogoTemp = BuscarPorId(id);
+                //verifica se o jogo existe no sistema, caso nao exista gera um exception
+                if (jogoTemp == null)
+                    throw new Exception("Jogo não encontrado no sistema. Verifique se foi digitado da maneira correta e tente novamente.");
+
+                //remove jogo no contexto atual
+                _ctx.Jogos.Remove(jogoTemp);
+                //salva as alteraçoes
+                _ctx.SaveChanges();
+
+            }
+            catch (Exception ex)
+            {
+
+                throw new Exception(ex.Message);
+            }
+
         }
     }
 }

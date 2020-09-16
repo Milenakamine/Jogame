@@ -12,7 +12,14 @@ namespace Jogame.Interfaces
         List<Jogo> Listar();
         Jogo BuscarPorId(Guid id);
 
+        List<Jogo> BuscarPorNome(string nome);
+
         Jogo Adicionar(List<JogoJogadores> jogoJogadores);
+
+        void Editar(Jogo jogo);
+        void Remover(Guid id);
+
+
 
     }
 }

@@ -1,11 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+using System.IO;
 using Jogame.Domains;
 using Jogame.Interfaces;
 using Jogame.Repositories;
-using Microsoft.AspNetCore.Http;
+using Jogame.Utils;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Jogame.Controllers
@@ -22,12 +21,22 @@ namespace Jogame.Controllers
 
 
 
+        //fromform - recebe os dados via form-data
         [HttpPost]
-        public IActionResult Post(List<JogoJogadores> jogoJogadores)
+        public IActionResult Post([FromForm]List<JogoJogadores> jogoJogadores)
         {
             try
             {
                 Jogo jogo = jogoRepository.Adicionar(jogoJogadores);
+
+                if (jogo.Imagem != null)
+                {
+                    var urlImagem = Upload.Local(jogo.Imagem);
+
+                    jogo.UrlImagem = urlImagem ;
+                }
+
+             
                 return Ok(jogo);
             }
             catch (System.Exception ex)
@@ -76,6 +85,57 @@ namespace Jogame.Controllers
                 return BadRequest(ex.Message);
             }
         }
+
+
+
+
+        // DELETE api/<JogoController>/5
+        [HttpDelete("{id}")]
+        public IActionResult Delete(Guid id)
+        {
+            try
+            {
+                //busca o jogo pelo Id
+                var jog = jogoRepository.BuscarPorId(id);
+
+                //verifica se o jogo existe
+                //caso não exista retorna NotFound
+                if (jog == null)
+                    return NotFound();
+
+                //caso exista remove o jogador
+                jogoRepository.Remover(id);
+                //retorna Ok
+                return Ok(id);
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(ex.Message);
+            }
+        }
+
+
+
+
+        // PUT api/<JogoController>/5
+        [HttpPut("{id}")]
+        public IActionResult Put(Guid id, Jogo jogo)
+        {
+            try
+            {
+                //edita o jogo
+                jogoRepository.Editar(jogo);
+
+                //retorna o Ok com os dados do jogo
+                return Ok(jogo);
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(ex.Message);
+            }
+        }
+
+
 
 
     }

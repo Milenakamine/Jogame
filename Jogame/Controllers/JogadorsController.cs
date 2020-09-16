@@ -1,10 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
 using Jogame.Domains;
 using Jogame.Interfaces;
 using Jogame.Repositories;
+using Jogame.Utils;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
@@ -53,7 +55,7 @@ namespace Jogame.Controllers
 
 
 
-        // GET api/<JogadorController>/5
+        // GET api/<JogadorsController>/5
         [HttpGet("{id}")]
         public IActionResult Get(Guid id)
         {
@@ -78,12 +80,25 @@ namespace Jogame.Controllers
         }
 
 
-        // POST api/<JogadorController>
+        // POST api/<JogadorsController>
         [HttpPost]
-        public IActionResult Post(Jogador jogador)
+        public IActionResult Post([FromForm]Jogador jogador)
         {
             try
             {
+
+
+                if (jogador.Imagem != null)
+                {
+                    var urlImagem = Upload.Local(jogador.Imagem);
+
+                    jogador.UrlImagem = urlImagem;
+                }
+
+
+
+
+
                 //adiciona um novo jogador
                 jogadorRepository.Adicionar(jogador);
 
@@ -100,9 +115,7 @@ namespace Jogame.Controllers
 
 
 
-
-
-        // PUT api/<AlunoController>/5
+        // PUT api/<JogadorsController>/5
         [HttpPut("{id}")]
         public IActionResult Put(Guid id, Jogador jogador)
         {
@@ -123,10 +136,7 @@ namespace Jogame.Controllers
 
 
 
-
-
-
-        // DELETE api/<AlunoController>/5
+        // DELETE api/<JogadorsController>/5
         [HttpDelete("{id}")]
         public IActionResult Delete(Guid id)
         {
