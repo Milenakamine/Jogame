@@ -1,0 +1,71 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Jogame</name>
+    </assembly>
+    <members>
+        <member name="M:Jogame.Controllers.JogadorsController.Get">
+            <summary>
+            Mostra todos os jogadores cadastrado 
+            </summary>
+            <returns>Lista com todos os jogadores</returns>
+        </member>
+        <member name="M:Jogame.Controllers.JogadorsController.Get(System.Guid)">
+            <summary>
+            Mostra um único jogador
+            </summary>
+            <param name="id">ID do jogador</param>
+            <returns>Um jogador</returns>
+        </member>
+        <member name="M:Jogame.Controllers.JogadorsController.Post(Jogame.Domains.Jogador)">
+            <summary>
+            Cadastra um novo jogador
+            </summary>
+            <param name="jogador">Objeto completo de Jogador</param>
+            <returns>Jogador cadastrado</returns>
+        </member>
+        <member name="M:Jogame.Controllers.JogadorsController.Put(System.Guid,Jogame.Domains.Jogador)">
+            <summary>
+            Altera determinado jogador
+            </summary>
+            <param name="id">ID do jogador</param>
+            <param name="jogador">Objeto Jogador com as alterações</param>
+            <returns>Info do jogador alterado</returns>
+        </member>
+        <member name="M:Jogame.Controllers.JogadorsController.Delete(System.Guid)">
+            <summary>
+            Exclui um jogador
+            </summary>
+            <param name="id">ID do jogador</param>
+            <returns>ID excluído</returns>
+        </member>
+        <member name="M:Jogame.Controllers.JogosController.Get">
+            <summary>
+            Mostra todos os jogos cadastrado 
+            </summary>
+            <returns>Lista com todos os jogos</returns>
+        </member>
+        <member name="M:Jogame.Controllers.JogosController.GetById(System.Guid)">
+            <summary>
+            Mostra um único jogo
+            </summary>
+            <param name="id">ID do jogo</param>
+            <returns>Um jogo</returns>
+        </member>
+        <member name="M:Jogame.Controllers.JogosController.Delete(System.Guid)">
+            <summary>
+            Exclui um jogo
+            </summary>
+            <param name="id">ID do jogo</param>
+            <returns>ID excluído</returns>
+        </member>
+        <member name="M:Jogame.Controllers.JogosController.Put(System.Guid,Jogame.Domains.Jogo)">
+            <summary>
+            Altera determinado jogo
+            </summary>
+            <param name="id">ID do jogo</param>
+            <param name="jogo">Objeto Jogo com as alterações</param>
+            <returns>Info do jogo alterado</returns>
+        </member>
+    </members>
+</doc>

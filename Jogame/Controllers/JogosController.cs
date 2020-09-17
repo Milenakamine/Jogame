@@ -47,7 +47,10 @@ namespace Jogame.Controllers
         }
 
 
-
+        /// <summary>
+        /// Mostra todos os jogos cadastrado 
+        /// </summary>
+        /// <returns>Lista com todos os jogos</returns>
         [HttpGet]
         public IActionResult Get()
         {
@@ -67,7 +70,11 @@ namespace Jogame.Controllers
         }
 
 
-
+        /// <summary>
+        /// Mostra um único jogo
+        /// </summary>
+        /// <param name="id">ID do jogo</param>
+        /// <returns>Um jogo</returns>
         [HttpGet("{id}")]
         public IActionResult GetById(Guid id)
         {
@@ -90,6 +97,11 @@ namespace Jogame.Controllers
 
 
         // DELETE api/<JogoController>/5
+        /// <summary>
+        /// Exclui um jogo
+        /// </summary>
+        /// <param name="id">ID do jogo</param>
+        /// <returns>ID excluído</returns>
         [HttpDelete("{id}")]
         public IActionResult Delete(Guid id)
         {
@@ -118,6 +130,12 @@ namespace Jogame.Controllers
 
 
         // PUT api/<JogoController>/5
+        /// <summary>
+        /// Altera determinado jogo
+        /// </summary>
+        /// <param name="id">ID do jogo</param>
+        /// <param name="jogo">Objeto Jogo com as alterações</param>
+        /// <returns>Info do jogo alterado</returns>
         [HttpPut("{id}")]
         public IActionResult Put(Guid id, Jogo jogo)
         {

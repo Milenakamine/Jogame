@@ -57,8 +57,15 @@ C:\Users\fic\source\repos\Jogo\Jogame\bin\Debug\netcoreapp3.1\Jogame.runtimeconf
 C:\Users\fic\source\repos\Jogo\Jogame\bin\Debug\netcoreapp3.1\Jogame.runtimeconfig.dev.json
 C:\Users\fic\source\repos\Jogo\Jogame\bin\Debug\netcoreapp3.1\Jogame.dll
 C:\Users\fic\source\repos\Jogo\Jogame\bin\Debug\netcoreapp3.1\Jogame.pdb
-C:\Users\fic\source\repos\Jogo\Jogame\obj\Debug\netcoreapp3.1\Jogame.csproj.CoreCompileInputs.cache
-C:\Users\fic\source\repos\Jogo\Jogame\obj\Debug\netcoreapp3.1\Jogame.MvcApplicationPartsAssemblyInfo.cache
 C:\Users\fic\source\repos\Jogo\Jogame\obj\Debug\netcoreapp3.1\Jogame.dll
 C:\Users\fic\source\repos\Jogo\Jogame\obj\Debug\netcoreapp3.1\Jogame.pdb
 C:\Users\fic\source\repos\Jogo\Jogame\obj\Debug\netcoreapp3.1\Jogame.genruntimeconfig.cache
+C:\Users\fic\source\repos\Jogo\Jogame\bin\Debug\netcoreapp3.1\Jogame.xml
+C:\Users\fic\source\repos\Jogo\Jogame\bin\Debug\netcoreapp3.1\Microsoft.OpenApi.dll
+C:\Users\fic\source\repos\Jogo\Jogame\bin\Debug\netcoreapp3.1\Swashbuckle.AspNetCore.Swagger.dll
+C:\Users\fic\source\repos\Jogo\Jogame\bin\Debug\netcoreapp3.1\Swashbuckle.AspNetCore.SwaggerGen.dll
+C:\Users\fic\source\repos\Jogo\Jogame\bin\Debug\netcoreapp3.1\Swashbuckle.AspNetCore.SwaggerUI.dll
+C:\Users\fic\source\repos\Jogo\Jogame\obj\Debug\netcoreapp3.1\Jogame.csproj.CoreCompileInputs.cache
+C:\Users\fic\source\repos\Jogo\Jogame\obj\Debug\netcoreapp3.1\Jogame.MvcApplicationPartsAssemblyInfo.cs
+C:\Users\fic\source\repos\Jogo\Jogame\obj\Debug\netcoreapp3.1\Jogame.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\fic\source\repos\Jogo\Jogame\obj\Debug\netcoreapp3.1\Jogame.xml

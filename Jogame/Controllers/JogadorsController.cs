@@ -25,7 +25,10 @@ namespace Jogame.Controllers
 
 
 
-
+        /// <summary>
+        /// Mostra todos os jogadores cadastrado 
+        /// </summary>
+        /// <returns>Lista com todos os jogadores</returns>
         [HttpGet]
         public IActionResult Get()
         {
@@ -56,6 +59,11 @@ namespace Jogame.Controllers
 
 
         // GET api/<JogadorsController>/5
+        /// <summary>
+        /// Mostra um único jogador
+        /// </summary>
+        /// <param name="id">ID do jogador</param>
+        /// <returns>Um jogador</returns>
         [HttpGet("{id}")]
         public IActionResult Get(Guid id)
         {
@@ -81,6 +89,11 @@ namespace Jogame.Controllers
 
 
         // POST api/<JogadorsController>
+        /// <summary>
+        /// Cadastra um novo jogador
+        /// </summary>
+        /// <param name="jogador">Objeto completo de Jogador</param>
+        /// <returns>Jogador cadastrado</returns>
         [HttpPost]
         public IActionResult Post([FromForm]Jogador jogador)
         {
@@ -116,6 +129,12 @@ namespace Jogame.Controllers
 
 
         // PUT api/<JogadorsController>/5
+        /// <summary>
+        /// Altera determinado jogador
+        /// </summary>
+        /// <param name="id">ID do jogador</param>
+        /// <param name="jogador">Objeto Jogador com as alterações</param>
+        /// <returns>Info do jogador alterado</returns>
         [HttpPut("{id}")]
         public IActionResult Put(Guid id, Jogador jogador)
         {
@@ -137,6 +156,11 @@ namespace Jogame.Controllers
 
 
         // DELETE api/<JogadorsController>/5
+        /// <summary>
+        /// Exclui um jogador
+        /// </summary>
+        /// <param name="id">ID do jogador</param>
+        /// <returns>ID excluído</returns>
         [HttpDelete("{id}")]
         public IActionResult Delete(Guid id)
         {
